@@ -11,7 +11,6 @@ namespace MyFirstWeb.Context
 {
     public class DbPrueba : DbContext
     {
-        public virtual DbSet<Student> students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
@@ -22,6 +21,8 @@ namespace MyFirstWeb.Context
             optionBuilder.UseMySql(configuration["connectionString:ProductionDb"]);
         }
 
+        public virtual DbSet<Student> students { get; set; }
+        public virtual DbSet<Curso> cursos { get; set; }
 
 
 
