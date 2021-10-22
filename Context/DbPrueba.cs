@@ -23,6 +23,7 @@ namespace MyFirstWeb.Context
 
         public virtual DbSet<Student> students { get; set; }
         public virtual DbSet<Curso> cursos { get; set; }
+        public virtual DbSet<CourseStudent> courseStudents { get; set; }
 
 
 

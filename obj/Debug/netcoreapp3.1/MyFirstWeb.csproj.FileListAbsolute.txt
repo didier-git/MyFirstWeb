@@ -258,7 +258,6 @@ C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Deb
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
-C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\Student\Students.cshtml.g.cs
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\MyFirstWeb.RazorTargetAssemblyInfo.cache
@@ -268,3 +267,5 @@ C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Deb
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\MyFirstWeb.pdb
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\MyFirstWeb.genruntimeconfig.cache
 C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\MyFirstWeb.csproj.CopyComplete
+C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\Curso\Index.cshtml.g.cs
+C:\Users\Administrador\Proyectos .Net\source\repos\MyFirstWeb\MyFirstWeb\obj\Debug\netcoreapp3.1\Razor\Views\Student\Students.cshtml.g.cs
