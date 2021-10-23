@@ -190,9 +190,9 @@
                     </li>
                 `;
             }
-            if (students.lenght === 0) {
+            if (students === undefined) {
                 content += `<li class="list-group-item">
-<p class="text-warning">No se encontraron estudiantes</p></li>`
+                            <p class="text-warning">No se encontraron estudiantes</p></li>`
             }
             content += "</ul>";
             container.html(content);
@@ -201,8 +201,8 @@
         async function handlerClickBtnSaveStudent() {
             const idCourse = $('#containerStudent').attr("idCourse");
             const checkStudents = $('input[id^="check_"]:checked');
-           
-            const students = [];
+
+            const students = new Array();
             checkStudents.each(function () {
                 students.push({
                     id: 0,
@@ -210,12 +210,16 @@
                     estudiante: parseInt($(this).attr("idStudent"))
                 });
             });
+            const params = {
+                st: students,
+                lqs:1232
+            };
             
             console.log(students);
             const response = await $.ajax({
                 method: "POST",
                 url: `/Curso/SaveStudentByCourse`,
-                data: students
+                data: params
             });
         }
             //------------------------------------------------------

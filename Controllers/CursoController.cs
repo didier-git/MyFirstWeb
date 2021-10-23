@@ -75,15 +75,11 @@ namespace MyFirstWeb.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveStudentByCourse(List<CourseStudent> students)
+        public JsonResult SaveStudentByCourse(List<CourseStudent> st,int lqs)
         {
             try
             {
-                foreach(var courseE in students)
-                {
-                    CourseStudent courseStudent = courseE;
-                    context.courseStudents.AddRange(courseStudent);
-                }
+                context.courseStudents.AddRange(st);
                 context.SaveChanges();
 
                 return Json(new
