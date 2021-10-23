@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyFirstWeb.Context;
 using MyFirstWeb.Models;
+using Newtonsoft.Json;
 
 namespace MyFirstWeb.Controllers
 {
@@ -31,11 +32,11 @@ namespace MyFirstWeb.Controllers
 
                 return Json(new
                 {
-                    success = true,
-                    curso = curso
+                    success = true
                 });
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return Json(new
                 {
                     success = false,
@@ -43,5 +44,62 @@ namespace MyFirstWeb.Controllers
                 });
             }
         }
+
+        public JsonResult showCourses()
+        {
+            var listCourses = context.cursos.ToList();
+            return Json(listCourses);
+        }
+
+        [HttpGet]
+        public JsonResult getStudentsByGrade(int course)
+        {
+            try
+            {
+                var courseInstance = context.cursos.Find(course);
+                var listStudent = context.students.Where(x => x.grado == courseInstance.grado).ToList();
+                return Json(new
+                {
+                    success = true,
+                    students = listStudent
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    message = ex.Message
+                });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult SaveStudentByCourse(List<CourseStudent> students)
+        {
+            try
+            {
+                foreach(var courseE in students)
+                {
+                    CourseStudent courseStudent = courseE;
+                    context.courseStudents.AddRange(courseStudent);
+                }
+                context.SaveChanges();
+
+                return Json(new
+                {
+                    success = true
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    mensaje = ex.Message
+                });
+            }
+        }
+
     }
 }
