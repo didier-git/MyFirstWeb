@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyFirstWeb.Context;
 using MyFirstWeb.Models;
-using Newtonsoft.Json;
+
 
 namespace MyFirstWeb.Controllers
 {
@@ -57,7 +57,21 @@ namespace MyFirstWeb.Controllers
             try
             {
                 var courseInstance = context.cursos.Find(course);
-                var listStudent = context.students.Where(x => x.grado == courseInstance.grado).ToList();
+                var corseStuden = context.courseStudents
+                    .Where(x=> x.curso == courseInstance.id)
+                    .Select(x=>x.estudiante).ToList();
+                var listStudent = context.students
+                    .Where(x => x.grado == courseInstance.grado)
+                    .Select(x => new { 
+                        id=x.id,
+                        nombre=x.nombre,
+                        isInCourse= corseStuden.Contains(x.id)
+                    }).ToList();
+
+                //var newList = listStudent.Where(x => !corseStuden.Contains(x.id)).ToList();
+
+
+
                 return Json(new
                 {
                     success = true,
@@ -75,11 +89,11 @@ namespace MyFirstWeb.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveStudentByCourse(List<CourseStudent> st,int lqs)
+        public JsonResult SaveStudentByCourse(List<CourseStudent> students, int loquesea)
         {
             try
             {
-                context.courseStudents.AddRange(st);
+                context.courseStudents.AddRange(students);
                 context.SaveChanges();
 
                 return Json(new
